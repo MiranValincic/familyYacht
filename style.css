@@ -1,0 +1,971 @@
+@import url('https://fonts.googleapis.com/css2?family=KoHo:wght@200;500;600&display=swap');
+
+× {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+body {
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    width: 100vw;
+    line-height: 1.6;
+    font-family: 'KoHo', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow-x: hidden;
+    color: #2f486d;
+ }
+
+
+.main {
+    background-color: #F7F8FF;
+    font-size: 1rem;
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    display: none;
+    transition: opacity 2s ease-in ;
+}
+
+/* Navigacija  */
+
+/* ikona na navigaciji  */
+
+#logohead{
+    background-image: url(ikone/logohead.png) ;
+    height: 50px;
+    width: 50px;
+    text-indent: -9999px;
+    background-repeat: no-repeat;
+}
+
+
+
+#navigacija {
+    text-decoration: none;
+    color:#2f486d ;
+    position: relative;
+    font-weight: 700;
+}
+
+
+
+#navigacija::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background:#883B1E;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 220ms ease-in;
+
+}
+
+#navigacija:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.navbar-toggler {
+    border: 0;
+}
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+    border: 0;
+}
+
+.toggler-icon {
+   width: 30px;
+   height: 3px;
+   background-color: #2f486d;
+   display: block;
+   transition: all 0.2s;
+}
+
+.middle-bar {
+    margin: 5px auto;
+}
+
+.navbar-toggler .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+}
+
+.navbar-toggler .middle-bar {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.navbar-toggler .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 10%;
+}
+
+.navbar-toggler.collapsed .top-bar{
+    transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.navbar-toggler.collapsed .bottom-bar{
+    transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .toggler-icon{
+    background-color: #2f486d;
+}
+
+
+
+
+
+/* Slider banner  */
+
+.slider {  
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+.slide.current {
+    opacity: 1;
+}
+ .slide .content {
+     position: absolute;
+     top: 20%;
+     left: -600px;
+     opacity: 0;
+     width: 600px;
+     background-color: rgba(255,255,255,0.8);
+     padding: 35px;
+     }
+.slide .content h1{
+    margin-bottom: 10px;
+ }
+.slide.current .content {
+    opacity: 1;
+    transform: translateX(1200px);
+    transition: all 0.7s ease-in-out 0.3s;
+} 
+.buttons button#next{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+}
+.buttons button#prev{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+}
+.buttons button{
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    padding: 13px 15px;
+    border-radius: 50%;
+    outline: none;
+}
+.buttons button:hover{
+    background-color: white;
+    color: #333;
+}
+
+@media(max-width: 500px) {
+    .slide .content {
+        bottom: -300px;
+        left: 0;
+        top: 50%;
+        bottom: 50%;
+        left: 20%;
+        width: 60%;
+        height: 50%;
+    }
+    .slide.current .content {
+        transform: translateY(-200px);
+    }
+    .content img{
+        width: 100%;
+        height: 50%;
+        margin-top: 20px;
+    }
+    .content h1{
+        font-size: 1.3em;
+    }
+    .buttons button{
+        padding: 7px 9px;
+    }
+
+}
+
+.slide:first-child {
+    background: url(slike/banner9.jpg) no-repeat top center/cover;
+}
+.slide:nth-child(2) {
+    background: url(slike/summer-1596054.jpg) no-repeat center center/cover;
+}
+.slide:nth-child(3) {
+    background: url(slike/solina-1-3.jpg) no-repeat center center/cover;
+}
+
+
+/* Section o nama  */
+
+.o-nama {
+    position: relative;
+    font-size: 1.2em;
+   }
+
+.o-nama h4 {
+    color:#883B1E ;
+    text-transform: uppercase;
+}
+
+.o-nama h1 {
+    color: #883B1E;
+    padding: 80px;
+    
+  }
+ h1 {
+     font-size: 4rem;
+ }
+ 
+
+
+.o-nama:hover .boat{
+animation: animate-boat 5s linear infinite ;
+}
+
+@keyframes animate-boat {
+    0% {
+        transform: rotate(0deg) translate(0,0);
+    }
+  
+   15%{
+        transform: rotate(-2deg) translateX(-40%);
+    }
+
+    30%{
+        transform: rotate(0deg) translateX(-80%);
+    }
+
+    50%{
+        transform: rotate(-2deg) translate(0,0);
+    }
+
+    65%{
+        transform: rotate(0deg) translateX(40%);
+    }
+
+    80%{
+        transform: rotate(2deg) translateX(80%);
+    }
+    
+    100%{
+        transform: rotate(0deg) translate(0,0);
+    }
+   
+}
+  
+.drugi{
+    padding-bottom: 150px;
+    padding-top: 50px;
+    width: 50ch;
+   }
+.drugi p{
+    margin-bottom: 5px;
+}   
+
+.boat{
+    background-image: url(ikone/yacht.png);
+    height: 128px;
+    width: 128px;
+    text-indent: -9999px;
+    background-repeat: no-repeat;
+}
+
+.cvor{
+    width: 350px;
+    height: 350px;
+}
+.pozadina{
+    background: rgba(0,0, 0, 0.1);
+     height: 400px;
+    width: 400px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+@media(max-width: 500px) {
+    h1{
+        font-size: 2rem;
+    }
+    h2{
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+
+    ul{
+        font-size: 0.8rem;
+    }
+
+    .o-nama h1{
+        padding-top: 30px;
+        padding-bottom: 10px;
+    }
+  
+    .cvor {
+        width: 250px;
+        height: 250px;
+        margin-top: 0;
+          }
+    .pozadina {
+        height: 300px;
+        width: 300px;
+        }
+
+    .drugi {
+        margin-left: 0;
+    }    
+}
+
+
+
+.o-nama::after,
+.o-nama::before {
+    position: absolute;
+    content: "";
+    width: 150px;
+    height: 150px;
+    background:#F7F8FF;
+    bottom: -1em;
+}
+
+.o-nama::after {
+    left: 50%;
+    transform: skew(0, -20deg);
+    z-index: 100;
+}
+.o-nama::before {
+    right: 50%;
+    transform: skew(0, 20deg);
+    z-index: 100;
+}
+
+/* Tim */
+
+.tim{
+    background-color:#152449 ;
+    color:#F7F8FF ;
+   padding-top: 60px;
+   padding-bottom: 170px;
+   box-sizing: border-box;
+   position: relative;
+}
+
+.tim::after,
+.tim::before {
+    position: absolute;
+    content: "";
+    width: 150px;
+    height: 150px;
+    background:#152449;
+    bottom: -1em;
+}
+
+.tim::after {
+    left: 50%;
+    transform: skew(0, -20deg);
+    z-index: 100;
+}
+.tim::before {
+    right: 50%;
+    transform: skew(0, 20deg);
+    z-index: 100;
+}  
+
+.kartica{
+    color:#f5f7fa ;
+    background-image: url(slike/slika11.jpg) ;
+    background-size: cover;
+    background-position: center;
+    padding: 8rem 0 0;
+    max-width: 30ch;
+    border-radius: .5em;
+    overflow: hidden;
+    transition: transform 500ms ease-in;
+}
+
+.kartica2{
+    color:#f5f7fa ;
+    background-image: url(slike/olaf.jpeg) ;
+    background-size: cover;
+    background-position: center;
+    padding: 8rem 0 0;
+    max-width: 30ch;
+    border-radius: .5em;
+    overflow: hidden;
+    transition: transform 500ms ease-in;
+}
+.kartica3{
+    color:#f5f7fa ;
+    background-image: url(slike/monika.jpeg) ;
+    background-size: cover;
+    background-position: bottom;
+    padding: 8rem 0 0;
+    max-width: 30ch;
+    border-radius: .5em;
+    overflow: hidden;
+    transition: transform 500ms ease-in;
+}
+.kartica4{
+    color:#f5f7fa ;
+    background-image: url(slike/olga.jpeg) ;
+    background-size: cover;
+    background-position: bottom;
+    padding: 8rem 0 0;
+    max-width: 30ch;
+    border-radius: .5em;
+    overflow: hidden;
+    transition: transform 500ms ease-in;
+}
+.kartica5{
+    color:#f5f7fa ;
+    background-image: url(slike/bartek.jpeg) ;
+    background-size: cover;
+    background-position: bottom;
+    padding: 8rem 0 0;
+    max-width: 30ch;
+    border-radius: .5em;
+    overflow: hidden;
+    transition: transform 500ms ease-in;
+}
+
+.kartica-content{
+    --padding: 1.5rem;
+    padding: var(--padding);
+   background: linear-gradient(hsl(0 0% 0% /0),
+   hsl(0 0% 0% /0.2) 10%,
+   hsl(0 0% 0% / 1)) ;
+   
+}
+
+.naslov-kartice{
+    position: relative;
+    width: max-content;
+}
+
+.body-kartice{
+    color: rgb(255 255 255 / 0.85);
+}
+
+
+.naslov-kartice::after{
+    content: "";
+    position: absolute;
+    height: 4px;
+    left:calc(var(--padding)* -1) ;
+    bottom: -2px;
+    width: calc(100% + var(--padding)) ;
+    background:#883B1E ;
+    transform-origin: left;
+    transition: transform 500ms ease-in;
+}
+
+@media (hover) {
+    .kartica-content{
+        transform: translateY(70%);
+        transition: transform 500ms ease-in;
+    }
+    .kartica:hover,
+    .kartica:focus-within{
+       transform: scale(1.05);
+}
+    .kartica2:hover,
+    .kartica2:focus-within{
+      transform: scale(1.05);
+    }
+    .kartica3:hover,
+    .kartica3:focus-within{
+      transform: scale(1.05);
+    }
+    .kartica4:hover,
+    .kartica4:focus-within{
+      transform: scale(1.05);
+    }
+     .kartica5:hover,
+    .kartica5:focus-within{
+      transform: scale(1.05);
+    }
+
+    .kartica-content > *:not(.naslov-kartice) {
+      opacity: 0;
+      transition: opacity 500ms linear;
+    }
+
+    .kartica:hover .kartica-content,
+    .kartica:focus-within .kartica-content {
+       transform: translateY(0);
+       transition-delay: 500ms ;
+    }
+    .kartica2:hover .kartica-content,
+    .kartica2:focus-within .kartica-content {
+      transform: translateY(0);
+      transition-delay: 500ms ;
+    }
+    .kartica3:hover .kartica-content,
+    .kartica3:focus-within .kartica-content {
+      transform: translateY(0);
+      transition-delay: 500ms ;
+    }
+    .kartica4:hover .kartica-content,
+    .kartica4:focus-within .kartica-content {
+      transform: translateY(0);
+      transition-delay: 500ms ;
+    }
+    .kartica5:hover .kartica-content,
+    .kartica5:focus-within .kartica-content {
+      transform: translateY(0);
+      transition-delay: 500ms ;
+    }
+
+    .kartica:focus-within .kartica-content,
+    .kartica2:focus-within .kartica-content
+    .kartica3:focus-within .kartica-content
+    .kartica4:focus-within .kartica-content
+    .kartica5:focus-within .kartica-content{
+       transition-duration:0ms ;
+    }
+
+    .kartica:hover .kartica-content *:not(.naslov-kartice),
+    .kartica:focus-within .kartica-content *:not(.naslov-kartice) {
+       opacity: 1;
+       transition-delay: 1000ms;
+    }
+    .kartica2:hover .kartica-content *:not(.naslov-kartice),
+    .kartica2:focus-within .kartica-content *:not(.naslov-kartice) {
+    opacity: 1;
+    transition-delay: 1000ms;
+    }
+    .kartica3:hover .kartica-content *:not(.naslov-kartice),
+    .kartica3:focus-within .kartica-content *:not(.naslov-kartice) {
+    opacity: 1;
+    transition-delay: 1000ms;
+    }
+    .kartica4:hover .kartica-content *:not(.naslov-kartice),
+    .kartica4:focus-within .kartica-content *:not(.naslov-kartice) {
+    opacity: 1;
+    transition-delay: 1000ms;
+    }
+    .kartica5:hover .kartica-content *:not(.naslov-kartice),
+    .kartica5:focus-within .kartica-content *:not(.naslov-kartice) {
+    opacity: 1;
+    transition-delay: 1000ms;
+    }
+
+    .kartica:hover .naslov-kartice::after,
+    .kartica:focus-within .naslov-kartice::after {
+       transform: scaleX(1);
+    }
+    .kartica2:hover .naslov-kartice::after,
+    .kartica2:hover .naslov-kartice::after {
+    transform: scaleX(1);
+   }
+   .kartica3:hover .naslov-kartice::after,
+   .kartica3:hover .naslov-kartice::after {
+   transform: scaleX(1);
+  }
+  .kartica4:hover .naslov-kartice::after,
+  .kartica4:hover .naslov-kartice::after {
+  transform: scaleX(1);
+ }
+ .kartica5:hover .naslov-kartice::after,
+ .kartica5:hover .naslov-kartice::after {
+ transform: scaleX(1);
+}
+    .naslov-kartice::after{
+      transform: scaleX(0);
+    }
+}
+
+
+
+.button{
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #883B1E ;
+    border-radius: 8px;
+    background-color:#f5f7fa ;
+    color: #2f486d;
+    padding: .2em .8em;
+}
+
+.button:hover,
+.button:focus{
+    background-color:#2f486d ;
+    color:#f5f7fa ;
+}
+
+/* Section ponuda  */
+/* 
+.ponuda-kartice{
+    margin: 3;
+    background-image: linear-gradient(180deg, #AE5173 0%,#E8796A 100%);
+    height: 100%;
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 100%;
+  } */
+
+ @media (hover) {
+    #ponuda:hover #boat{
+        animation: animate-boat 5s linear infinite;
+    }
+    #ponuda::after,
+    #ponuda::before {
+    position: absolute;
+    content: "";
+    width: 150px;
+    height: 150px;
+    background:#f5f7fa;
+    bottom: -1em;
+}
+
+#ponuda::after {
+    left: 50%;
+    transform: skew(0, -20deg);
+    z-index: 100;
+}
+#ponuda::before {
+    right: 50%;
+    transform: skew(0, 20deg);
+    z-index: 100;
+}    
+
+ }
+
+ #ponuda img{
+     height: 80%;
+     width: 80%;
+ }
+
+#ponuda h1, h2{
+    color: #883B1E
+}
+#ponuda h1{
+    margin-bottom: 15px;
+}
+#ponuda p {
+    padding-bottom: 150px;
+    margin-top: 20px;
+}
+
+#ponuda{
+    background-color: #f5f7fa ;
+    color:#152449; 
+    padding-top: 70px;
+    position: relative;
+}
+
+
+
+.part{
+    font-size: 1.4rem;
+    max-width: 75ch;
+}
+
+@media (max-width: 500px){
+    .part{
+        font-size: 0.8rem;
+    }
+}
+
+/* Kontakt */
+
+#input-unos{
+    padding: 2em;
+    border-bottom: 3px solid #883B1E;
+    background-color:#f5f7fa ;
+   
+}
+
+
+.kontakt {
+    position: relative;
+    padding-top: 70px;
+}
+.contact-form .form-field{
+    position: relative;
+    margin: 32px 0;
+}
+
+
+#kontakt{
+    padding-bottom: 80px;
+}
+.kontakt h1 {
+    padding-bottom: 10px;
+    color: #883B1E;
+}
+
+.kontakt::after,
+.kontakt::before {
+    position: absolute;
+    content: "";
+    width: 150px;
+    height: 150px;
+    background: #F7F8FF;
+    bottom: -1em;
+}
+
+.kontakt::after {
+    left: 50%;
+    transform: skew(0, -20deg);
+    z-index: 100;
+}
+.kontakt::before {
+    right: 50%;
+    transform: skew(0, 20deg);
+    z-index: 100;
+}
+
+
+.form-control{
+    border: 1px solid #f5f7fa;
+}
+
+.btn {
+    border: 1px solid#f5f7fa;
+    border-radius: 5px;
+    padding: 0.8rem; 
+}
+
+.btn:hover{
+    background-color:#2f486d;
+    color: white;
+    transform: scale(1.05);
+}
+/* Galerija */
+
+.galerija{
+    padding-top: 70px;
+    background-color:#152449;
+    color: #F7F8FF;
+    position: relative;
+    padding-bottom: 160px;
+}
+
+.galerija img{
+    transition: 1s;
+    padding: 15px;
+    width: 200px;
+}
+.galerija img:hover{
+    filter: grayscale(100%);
+    transform: scale(1.1);
+}
+
+.galerija::after,
+.galerija::before {
+    position: absolute;
+    content: "";
+    width: 150px;
+    height: 150px;
+    background: #152449;
+    bottom: -1em;
+}
+
+.galerija::after {
+    left: 50%;
+    transform: skew(0, -20deg);
+    z-index: 100;
+}
+.galerija::before {
+    right: 50%;
+    transform: skew(0, 20deg);
+    z-index: 100;
+}
+
+
+
+/* Google mapa  */
+#mapa{
+    background-color: #152449;
+    color:#F7F8FF;
+    padding: 6rem;
+    position: relative;
+   }  
+ .map-responsive{
+     padding-bottom: 3.7em;
+ }
+   @media (max-width: 550px) {
+       .map-responsive{
+           width: 200%;
+           margin-left:-50%;
+       }
+   }
+
+   #mapa::after,
+   #mapa::before {
+    position: absolute;
+    content: "";
+    width: 150px;
+    height: 150px;
+    background:#152449;
+    bottom: -1em;
+}
+
+   #mapa::after {
+    left: 50%;
+    transform: skew(0, -20deg);
+    z-index: 100;
+}
+   #mapa::before {
+    right: 50%;
+    transform: skew(0, 20deg);
+    z-index: 100;
+}
+/* Footer  */
+
+
+.footer-dark {
+    padding:50px 0;
+    color:#282d32;
+    background-image: linear-gradient(175deg, #fff 0%,  rgba(21, 36, 73, 0.5) 100%);
+  }
+  
+  .footer-dark h3 {
+    margin-top:0;
+    margin-bottom:12px;
+    font-weight:bold;
+    font-size:16px;
+  }
+  
+  .footer-dark ul {
+    padding:0;
+    list-style:none;
+    line-height:1.6;
+    font-size:14px;
+  }
+  
+  .footer-dark ul a {
+    color:inherit;
+    text-decoration:none;
+    opacity:0.6;
+  }
+  
+  .footer-dark ul a:hover {
+    opacity:0.8;
+  }
+  
+  @media (max-width:767px) {
+    .footer-dark .item:not(.social) {
+      text-align:center;
+      padding-bottom:20px;
+    }
+  }
+  
+  .footer-dark .item.text {
+    margin-bottom:36px;
+  }
+  
+  @media (max-width:767px) {
+    .footer-dark .item.text {
+      margin-bottom:0;
+    }
+  }
+  
+  .footer-dark .item.text p {
+    opacity:0.6;
+    margin-bottom:0;
+  }
+  
+  #fb a{
+    color: #2f486d;
+}
+#fb a:hover{
+    color: #883B1E;
+    transform: scale(1.1);
+}
+  
+  .footer-dark .copyright {
+    text-align:center;
+    padding-top:24px;
+    opacity:0.3;
+    font-size:13px;
+    margin-bottom:0;
+  }
+  
+  .potpis{
+        font-size: 0.9rem;
+        color:  #883B1E;
+        font-family: 'Dancing Script', cursive;
+        font-weight: 400;
+    }
+.back-to-top {
+        position: relative;
+        z-index: 1000; }
+        .back-to-top .btn-dark {
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          padding: 0;
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background: #2e2e2e;
+          border-color: #2e2e2e;
+          display: none;
+          z-index: 999;
+          -webkit-transition: all 0.3s linear;
+          -o-transition: all 0.3s linear;
+          transition: all 0.3s linear; 
+}
+.back-to-top .btn-dark:hover {
+     cursor: pointer;
+      background: #FA6742;
+       border-color: #FA6742; 
+ }  
+
+.logo-footer {
+    width: 220px;
+    height: 220px;
+}

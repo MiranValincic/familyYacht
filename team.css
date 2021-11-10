@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=KoHo:wght@200;500;600&display=swap');
+
+body{
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    width: 100vw;
+    line-height: 1.6;
+    font-family: 'KoHo', sans-serif;
+    overflow-x: hidden; 
+    color: #2f486d;
+}
+
+× {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Navigacija  */
+
+/* ikona na navigaciji  */
+
+#logohead{
+    background-image: url(ikone/logohead.png) ;
+    height: 50px;
+    width: 50px;
+    text-indent: -9999px;
+    background-repeat: no-repeat;
+}
+
+
+#navigacija {
+    text-decoration: none;
+    color:#2f486d ;
+    position: relative;
+}
+
+#navigacija::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background:#883B1E;
+
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 220ms ease-in;
+
+}
+
+#navigacija:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.navbar-toggler {
+    border: 0;
+}
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+    border: 0;
+}
+
+.toggler-icon {
+   width: 30px;
+   height: 3px;
+   background-color: #2f486d;
+   display: block;
+   transition: all 0.2s;
+}
+
+.middle-bar {
+    margin: 5px auto;
+}
+
+.navbar-toggler .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+}
+
+.navbar-toggler .middle-bar {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.navbar-toggler .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 10%;
+}
+
+.navbar-toggler.collapsed .top-bar{
+    transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.navbar-toggler.collapsed .bottom-bar{
+    transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .toggler-icon{
+    background-color: #2f486d;
+}
+
+
+.team{
+    background-color: #152449;
+    color: #f5f7fa;
+    padding: 5em;
+    width: 100wv;
+}
+
+.content{
+    background: rgba(0,0, 0, 0.1);
+     height: 400px;
+    width: 350px;
+    padding: 2em;
+    margin: 2em;
+}
+
+.sine{
+    border-bottom: 1px solid #f5f7fa;
+    width: 100%;
+}
+
+@media(max-width: 500px) {
+  
+  .sine img{
+   max-width:250px;
+    }
+}
+/* Footer  */
+
+
+.footer-dark {
+    padding:50px 0;
+    color:#282d32;
+    background-image: linear-gradient(175deg, #fff 0%,  rgba(21, 36, 73, 0.5) 100%);
+  }
+  
+  .footer-dark h3 {
+    margin-top:0;
+    margin-bottom:12px;
+    font-weight:bold;
+    font-size:16px;
+  }
+  
+  .footer-dark ul {
+    padding:0;
+    list-style:none;
+    line-height:1.6;
+    font-size:14px;
+  }
+  
+  .footer-dark ul a {
+    color:inherit;
+    text-decoration:none;
+    opacity:0.6;
+  }
+  
+  .footer-dark ul a:hover {
+    opacity:0.8;
+  }
+  
+  @media (max-width:767px) {
+    .footer-dark .item:not(.social) {
+      text-align:center;
+      padding-bottom:20px;
+    }
+  }
+  
+  .footer-dark .item.text {
+    margin-bottom:36px;
+  }
+  
+  @media (max-width:767px) {
+    .footer-dark .item.text {
+      margin-bottom:0;
+    }
+  }
+  
+  .footer-dark .item.text p {
+    opacity:0.6;
+    margin-bottom:0;
+  }
+  
+  #fb a{
+    color: #2f486d;
+}
+#fb a:hover{
+    color: #883B1E;
+    transform: scale(1.1);
+}
+  
+  .footer-dark .copyright {
+    text-align:center;
+    padding-top:24px;
+    opacity:0.3;
+    font-size:13px;
+    margin-bottom:0;
+  }
+  
+  .potpis{
+        font-size: 0.9rem;
+        color:  #883B1E;
+        font-family: 'Dancing Script', cursive;
+        font-weight: 400;
+    }
+.back-to-top {
+        position: relative;
+        z-index: 1000; }
+        .back-to-top .btn-dark {
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          padding: 0;
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background: #2e2e2e;
+          border-color: #2e2e2e;
+          display: none;
+          z-index: 999;
+          -webkit-transition: all 0.3s linear;
+          -o-transition: all 0.3s linear;
+          transition: all 0.3s linear; 
+}
+.back-to-top .btn-dark:hover {
+     cursor: pointer;
+      background: #FA6742;
+       border-color: #FA6742; 
+ }  
+
+.logo-footer {
+    width: 220px;
+    height: 220px;
+}

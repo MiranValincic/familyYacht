@@ -1,0 +1,10 @@
+#anchor  {
+    animation: grow 2s linear infinite;
+    transform: scale(0);
+}
+
+@keyframes grow {
+    50% {
+        transform: scale(0.5);
+    }
+}
